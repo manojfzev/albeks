@@ -9,7 +9,9 @@ kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/relea
 Execute yaml files in permission dir first if role already created if not then execute below commands
 
 curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json
+
 aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+
 eksctl create iamserviceaccount \
   --cluster=my-cluster \
   --namespace=kube-system \
