@@ -18,3 +18,15 @@ spec:
                 name: nginx-svc
                 port:
                   number: 80
+
+
+    - host: nginxweb-v2.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-svc-v2
+                port:
+                  number: 80

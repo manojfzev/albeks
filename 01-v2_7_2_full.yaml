@@ -866,10 +866,8 @@ spec:
     spec:
       containers:
       - args:
-        - --cluster-name=eks-cluster
+        - --cluster-name=
         - --ingress-class=alb
-        - --aws-vpc-id=vpc-00cc219d8a9764f5a
-        - --aws-region=us-east-1
         image: public.ecr.aws/eks/aws-load-balancer-controller:v2.7.2
         livenessProbe:
           failureThreshold: 2
