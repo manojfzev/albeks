@@ -23,11 +23,15 @@ eksctl create iamserviceaccount \
 Execute rest of the yaml files in order as per below.
 
 01-v2_7_2_full.yaml (Update --cluster-name in container args section)
+
 02-v2_7_2_ingclass.yaml
+
 03-ingress.yaml
 
 Then deploy the application
+
 nginx-deployment-v2.yaml
+
 nginx-deployment.yaml
 
 References
