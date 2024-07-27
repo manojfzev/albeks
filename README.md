@@ -20,7 +20,7 @@ eksctl create iamserviceaccount \
   --attach-policy-arn=arn:aws:iam::<AWS-Account-ID>:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
 
-Execute rest of the yaml files in order as per below.
+Apply rest of the yaml files using kubectl apply -f <filename> in order as per below.
 
 01-v2_7_2_full.yaml (Update --cluster-name in container args section)
 
@@ -28,7 +28,7 @@ Execute rest of the yaml files in order as per below.
 
 03-ingress.yaml
 
-Then deploy the application
+Then deploy the application using below yaml files
 
 nginx-deployment-v2.yaml
 
