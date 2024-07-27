@@ -1,7 +1,11 @@
 cluster_name=<cluster name>
+
 oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)
+
 eksctl utils associate-iam-oidc-provider --cluster=$cluster_name --approve
+
 kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.13.5/cert-manager.yaml
+
 Execute yaml files in permission dir first if role already created if not then execute below commands
 
 curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json
