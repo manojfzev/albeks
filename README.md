@@ -1,3 +1,5 @@
+## Deploy ALB for EKS Cluster
+
 cluster_name=(cluster name)
 
 oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)
