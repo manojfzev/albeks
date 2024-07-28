@@ -12,6 +12,11 @@ If output is returned, then you already have an IAM OIDC provider for your clust
 
 eksctl utils associate-iam-oidc-provider --cluster=$cluster_name --approve
 
+Authenticate with EKS cluster
+
+aws eks update-kubeconfig --name $cluster_name
+
+Deploy cert manager in EKS
 kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.13.5/cert-manager.yaml
 
 Execute yaml files in permission dir first if role already created if not then execute below commands also remember to update the trust relationships with oidc id if role already exsist.
