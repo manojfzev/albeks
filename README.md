@@ -4,7 +4,7 @@ cluster_name=(cluster name)
 
 oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)
 
-#Determine whether an IAM OIDC provider with your cluster's issuer ID is already in your account.
+Determine whether an IAM OIDC provider with your cluster's issuer ID is already in your account.
 
 aws iam list-open-id-connect-providers | grep $oidc_id | cut -d "/" -f4
 
